@@ -1,30 +1,54 @@
+<html>
+
 <head>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	<title>Even or Odd?</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 	<script>
 		let even = () => {
 			if (document.getElementById("number-input").value == "") {
-				document.getElementById("result").innerHTML = "You need to enter something";
+				document.getElementById("result").innerHTML = "<p>You need to enter something</p>";
 			}
 			else if (Number(document.getElementById("number-input").value) % 2 == 0) { document.getElementById("result").innerHTML = "Even" }
 			else { document.getElementById("result").innerHTML = "Odd" }
 		}
 	</script>
 	<style>
-		#result {
-			color: rgb(105, 190, 211);
+		.form-control {
+			width: 15rem;
+		}
+
+		#number-input {
+			margin: auto;
+		}
+
+		#even-number-article {
+			margin: auto;
+			text-align: center;
 		}
 	</style>
 </head>
 
 <body>
-	<h1>
-		Numbers
-	</h1>
+	<article id="even-number-article">
 
-	<input id="number-input" type="number">
-	<button type="button" class="btn btn-primary" onclick="even()">Submit</button>
-	<p id="result">
+		<h1 class="display-1" align="center">
+			Even or odd?
+		</h1>
 
-	</p>
+		<div class="mb-3">
+			<input id="number-input" type="number" class="form-control" placeholder="Number" aria-label=""
+				aria-describedby="basic-addon1">
+			<div class="mb-3">
+				<button class="btn btn-dark" type="button" onclick="even()">Submit</button>
+			</div>
+		</div>
 
+		<p id="result"></p>
+
+	</article>
 </body>
+
+</html>
