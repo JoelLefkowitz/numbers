@@ -28,7 +28,7 @@
 				x = Number(x);
 				for (let i = 2; i < x; i++) {
 					let condition = x % i == 0;
-					if (x == 2) {condition = false;}
+					if (x == 2) { condition = false; }
 					if (condition) {
 						primeResult.innerHTML = `<p><mark>${x}</mark> is a <mark>composite</mark> number`;
 						break;
