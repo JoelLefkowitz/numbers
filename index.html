@@ -17,13 +17,11 @@
 
 		let prime = (x) => {
 			for (let i = 2; i < x ; i++) {
-				if (x % i == 0) {
+				if (x % i === 0) {
 					return false;
-				} else {
-					return true;
 				}
-			}
-		}
+			} return true;
+		} 
 
 		let getPrime = () => {
 			let x = document.getElementById("prime-input").value;
