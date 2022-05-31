@@ -14,17 +14,43 @@
 			else if (Number(document.getElementById("number-input").value) % 2 == 0) { document.getElementById("result").innerHTML = "Even" }
 			else { document.getElementById("result").innerHTML = "Odd" }
 		}
+
+		let prime = () => {
+			let x = document.getElementById("prime-input").value;
+			let primeResult = document.getElementById("prime-result");
+			if (x === "") {
+				primeResult.innerHTML = "<p>You need to enter something</p>"
+			} else if (Number(x) < 1) {
+				primeResult.innerHTML = "<p>Prime numbers are <mark>larger</mark> than 1";
+			} else if (Number(x) === 1) {
+				primeResult.innerHTML = "<p>1 is <mark>neither</mark> a composite or prime number</p>"
+			} else {
+				x = Number(x);
+				for (let i = 2; i < x; i++) {
+					let condition = x % i == 0;
+					if (x == 2) {condition = false;}
+					if (condition) {
+						primeResult.innerHTML = `<p><mark>${x}</mark> is a <mark>composite</mark> number`;
+						break;
+					} else {
+						primeResult.innerHTML = `<p><mark>${x}</mark> is a <mark>prime</mark> number`;
+						break;
+					}
+				}
+			}
+		}
 	</script>
 	<style>
 		.form-control {
 			width: 15rem;
 		}
 
-		#number-input {
+		#number-input,
+		#prime-input {
 			margin: auto;
 		}
 
-		#even-number-article {
+		.article {
 			margin: auto;
 			text-align: center;
 		}
@@ -32,7 +58,7 @@
 </head>
 
 <body>
-	<article id="even-number-article">
+	<article class="article">
 
 		<h1 class="display-1" align="center">
 			Even or odd?
@@ -41,14 +67,32 @@
 		<div class="mb-3">
 			<input id="number-input" type="number" class="form-control" placeholder="Number" aria-label=""
 				aria-describedby="basic-addon1">
-			<div class="mb-3">
-				<button class="btn btn-dark" type="button" onclick="even()">Submit</button>
-			</div>
+			<button class="btn btn-dark" type="button" onclick="even()">Submit</button>
 		</div>
 
 		<p id="result"></p>
 
 	</article>
+
+	<hr>
+
+	<article class="article">
+		<h1 class="display-2" align="center">
+			Prime or composite?
+		</h1>
+
+		<div class="mb-3">
+			<input id="prime-input" type="number" class="form-control" placeholder="Number" aria-label=""
+				aria-describedby="basic-addon1">
+			<button class="btn btn-dark" type="button" onclick="prime()">Submit</button>
+
+		</div>
+
+		<p id="prime-result"></p>
+
+	</article>
+
+
 </body>
 
 </html>
