@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 
 app.post("/numbers", (req, res, next) => {
 	if ("primeNumber" in req.body) { res.send(getPrime(req.body.primeNumber)) }
-	else { next() }
+	else { next(); }
 })
 
 app.post("/numbers", (req, res) => {
