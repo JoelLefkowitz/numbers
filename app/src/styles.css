@@ -1,0 +1,13 @@
+.form-control {
+	width: 15rem;
+}
+
+#even-input,
+#prime-input {
+	margin: auto;
+}
+
+.article {
+	margin: auto;
+	text-align: center;
+}
