@@ -1,2 +1,4 @@
-import {getPrime} from "../dist/primes.js"
-import {getEven} from "../dist/evens.js"
+import {getPrime} from "./primes"
+import {getEven} from "./evens"
+document.getElementById("prime-button").addEventListener("click", getPrime)
+document.getElementById("even-button").addEventListener("click", getEven)
